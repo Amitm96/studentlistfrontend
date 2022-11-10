@@ -12,6 +12,9 @@ const Login = () => {
             navigate("/")
         }
     })
+    function signupRedirect(){
+        navigate("/signup")
+    }
 
     async function Userlogin(){
         let data = {email : email , password : password}
@@ -43,10 +46,17 @@ const Login = () => {
                 </div>
             </div>
             <div className="form-group row">
-                <div className="col-sm-10">
+                <div className="col-sm-7">
                     <button type="button" className="btn btn-primary" onClick={Userlogin}>Log In</button>
                 </div>
+                <div className="col-sm-4">
+                
+                    <button type="button" className="btn btn-primary" onClick={signupRedirect}>Sign Up</button>
+                </div>
+                
             </div>
+            <small>If Not Registerd User SignUp First</small>
+            
         </form>
         </div>
     )

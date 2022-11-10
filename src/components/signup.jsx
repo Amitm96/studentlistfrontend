@@ -18,9 +18,10 @@ const SignUp = () => {
         if(!validateEmail(email)){
             alert("Enter valid Email")
         }
-        if(password.trim().length == 0 || password.length < 8){
+        else if(password.trim().length == 0 || password.length < 8){
             alert("Enter Valid password")
         }
+        else{
         let data = {name : name , email : email , password : password}
         let res = await fetch("http://localhost:5000/user/createUser" , {method:'post', body : JSON.stringify(data) , headers : {'Content-Type' : 'application/json'}});
         res = await res.json()
@@ -33,6 +34,7 @@ const SignUp = () => {
             setpassword("")
             alert("user created successfully Login to see student list")
         }
+    }
     }
 
     return (
